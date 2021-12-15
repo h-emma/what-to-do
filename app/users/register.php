@@ -9,6 +9,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $email = trim($_POST['email']);
     $passwordHach = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+    //Här är något som inte funkar!
     $statement = $database->prepare('INSERT INTO users (username, email, password) VALUES (:username, :email, :password)');
     $statement->bindParam(':username', $username);
     $statement->bindParam(':email', $email);
