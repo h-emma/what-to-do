@@ -13,5 +13,3 @@
 
 <body>
     <?php require __DIR__ . '/navigation.php'; ?>
-
-    <div class="container py-5">
