@@ -11,18 +11,18 @@
             <small class="form-text"></small>
         </div>
 
-        <div class="login-emial">
+        <div class="register-emial">
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" id="email" placeholder="email@mail.com" required>
             <!-- <small class="form-text"></small> -->
         </div>
 
-        <div class=login-password>
+        <div class=register-password>
             <label for="password">Password</label>
             <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
             <!-- <small class="form-text"></small> -->
         </div>
-        <div class=login-avatar>
+        <div class=register-avatar>
             <label for="avatar">Upload an image in PNG format</label>
             <input class="form-control" type="file" name="avatar" id="avatar" accept=".png" required>
         </div>
