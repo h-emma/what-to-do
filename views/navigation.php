@@ -19,7 +19,11 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/create-account.php' ? 'active' : ''; ?>" href="/create-account.php">Create an account</a>
+            <?php if (isset($_SESSION['user'])) : ?>
+                <a class="nav-link" href="settings-for-user.php">Settings</a>
+            <?php else : ?>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/create-account.php' ? 'active' : ''; ?>" href="/create-account.php">Create an account</a>
+            <?php endif; ?>
         </li>
     </ul>
 </nav>
