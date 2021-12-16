@@ -4,7 +4,7 @@
 <article>
     <h1>Create an account</h1>
 
-    <form action="app/users/register.php" method="post">
+    <form action="app/users/register.php" method="post" enctype="multipart/form-data">>
         <div class="register-username">
             <label for="username">Username</label>
             <input class="form-control" type="text" name="username" id="username" placeholder="Username" required>
