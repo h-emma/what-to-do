@@ -22,8 +22,11 @@
             <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
             <!-- <small class="form-text"></small> -->
         </div>
-
-        <button type="submit" class="button-login">Login</button>
+        <div class=login-avatar>
+            <label for="avatar">Upload an image in PNG format</label>
+            <input class="form-control" type="file" name="avatar" id="avatar" accept=".png" required>
+        </div>
+        <button type="submit" class="button-create-account">Create an account</button>
     </form>
 
     <p>Do you have an account, <a href="login.php">login!</a></p>

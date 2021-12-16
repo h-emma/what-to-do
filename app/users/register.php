@@ -18,6 +18,25 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $statement->execute();
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 }
+
+if (isset($_FILES['avatar'])) {
+    $avatar = $_FILES['avatar'];
+
+    $avatar['name'] = date('Y-m-d') . $avatar['name'];
+    $direction = __DIR__ . '/avatar-uploads/' . $avatar['name'];
+
+    if ($avatar['type'] !== 'image/png') {
+        echo 'The image file needs to be an .png, please choose an another format';
+    } else {
+        move_uploaded_file($avatar['tmp_name'], $direction);
+
+        $statement = $database->prepare('INSERT INTO users (avatar_image) VALUES (:avatar_image)');
+        $statement->bindParam(':avatar_image', $avatar);
+
+        $statement->execute();
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+    };
+};
 // In this file we register a new user.
 
 redirect('/login.php');
