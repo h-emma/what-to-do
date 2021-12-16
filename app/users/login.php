@@ -30,8 +30,6 @@ if (isset($_POST['email'], $_POST['password'])) {
             'email' => $user['email'],
             'avatar_image' => $user['avatar_image']
         ];
-    } else {
-        echo 'error!';
     }
 }
 
