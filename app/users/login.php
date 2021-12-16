@@ -24,7 +24,6 @@ if (isset($_POST['email'], $_POST['password'])) {
     $passmatch = password_verify($_POST['password'], $user['password']);
 
     if ($passmatch) {
-
         $_SESSION['user'] = [
             'id' => $user['id'],
             'username' => $user['username'],
