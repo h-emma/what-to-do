@@ -6,7 +6,8 @@
     <p></p>
 
     <?php if (isset($_SESSION['user'])) : ?>
-        <p>Welcome, <?php echo $_SESSION['user']['name']; ?>!</p>
+        <p>Welcome, <?php echo $_SESSION['user']['username']; ?>!</p>
+        <img src="<?php echo $_SESSION['user']['avatar_image']; ?>">
     <?php endif; ?>
 </article>
 
