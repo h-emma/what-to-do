@@ -13,7 +13,7 @@
         <button type="submit" class="button-update-settings">Update</button>
     </form>
 
-    <form action="app/users/edit-settings-for-user.php" method="post">
+    <form action="app/users/update-settings-for-user.php" method="post">
         <div class=update-password>
             <label for="password">Password</label>
             <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
