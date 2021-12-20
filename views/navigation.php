@@ -1,5 +1,5 @@
 <nav class="nav-container">
-    <!-- <a class="nav-loga" href="#"><?php echo $config['title']; ?></a> -->
+    <a class="nav-loga" href="#"><?php echo $config['title']; ?></a>
 
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -25,5 +25,10 @@
                 <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/create-account.php' ? 'active' : ''; ?>" href="/create-account.php">Create an account</a>
             <?php endif; ?>
         </li>
+
+        <li class="nav-item">
+            <?php if (isset($_SESSION['user'])) : ?>
+                <a class="nav-link" href="lists.php">To-do lists</a>
+            <?php endif; ?>
     </ul>
 </nav>
