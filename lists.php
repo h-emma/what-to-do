@@ -37,4 +37,11 @@
             <button type="submit">Delete list</button>
     </form>
 </div>
+<div class="task-form">
+    <form action="app/task/completed.php" method="post">
+        <div class="add-task-completed">
+            <label for="checkbox-task-completed"></label>
+            <input type="checkbox" name="checkbox-task-completed" id="checkbox-task-completed">
+    </form>
+</div>
 <?php require __DIR__ . '/views/footer.php'; ?>
