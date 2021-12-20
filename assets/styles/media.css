@@ -1,0 +1,27 @@
+@media only screen and (min-width: 760px) {
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-item {
+    align-self: flex-end;
+    margin-left: 5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    color: #475569;
+  }
+
+  .nav-link:hover {
+    font-weight: bold;
+  }
+}
