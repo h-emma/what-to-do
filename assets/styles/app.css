@@ -1,1 +1,20 @@
-/* In this file you can add your custom styles. */
+:root {
+  /* Colors */
+  --background-color: #f8fbff;
+}
+* {
+  box-sizing: border-box;
+  font-family: sdfsf;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
