@@ -2,7 +2,7 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 
 <article>
-    <h1>Add your to-do list</h1>
+    <h1>To-do lists</h1>
 
     </div>
     <div class="list-form">
@@ -44,4 +44,26 @@
             <input type="checkbox" name="checkbox-task-completed" id="checkbox-task-completed">
     </form>
 </div>
+<div class="task-form">
+    <form action="app/task/create.php" method="post">
+        <div class="add-task">
+            <label for="title">Task title</label>
+            <input class="form-control" type="text" name="task-title" id="task-title" placeholder="title" required>
+        </div>
+        <div class="add-task">
+            <label for="description">Task description</label>
+            <input class="form-control" type="text" name="task-description" id="task-description" placeholder="description" required>
+        </div>
+        <div class="add-task">
+            <label for="created">Created at</label>
+            <input class="form-control" type="date" name="task-created" id="task-created" required>
+        </div>
+        <div class="add-task">
+            <label for="deadline">Deadline</label>
+            <input class="form-control" type="date" name="task-deadline" id="task-deadline" required>
+        </div>
+        <button type="submit" class="add-task">Add task to list</button>
+    </form>
+</div>
+
 <?php require __DIR__ . '/views/footer.php'; ?>
