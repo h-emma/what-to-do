@@ -1,7 +1,11 @@
 <nav class="nav-container">
     <a class="nav-loga" href="#"><?php echo $config['title']; ?></a>
-
-    <ul class="navbar-nav">
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <ul class="navbarNav">
         <li class="nav-item">
             <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''; ?>" href="/index.php">Home</a>
         </li>
