@@ -11,15 +11,67 @@ body {
   background-color: var(--background-color);
 }
 
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 img {
   width: 80px;
   border-radius: 50%;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hamburger {
+  width: 35px;
+  height: 30px;
+  margin: 30px 0 20px 20px;
+  cursor: pointer;
+}
+
+.bar {
+  height: 5px;
+  width: 100%;
+  margin: 4px;
+  background-color: black;
+  display: block;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbarNav li {
+  list-style: none;
+  color: black;
+  padding: 16xp 0;
+}
+
+.navbarNav a {
+  text-decoration: none;
+}
+.nav-item:hover {
+  font-weight: bold;
+}
+.navbarNav {
+  padding: 0;
+  margin: 0 20px;
+  position: fixed;
+  transition: 0.3s ease;
+  display: none;
+  top: 65px;
+  right: -5px;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(50deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-50deg);
+}
+
+.navbarNav.active {
+  display: block;
 }
