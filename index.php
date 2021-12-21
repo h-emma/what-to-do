@@ -11,4 +11,5 @@
     <?php endif; ?>
 </article>
 
+<!-- Loop out the task that have deadline today by using a fuction that get the information from the db -->
 <?php require __DIR__ . '/views/footer.php'; ?>
