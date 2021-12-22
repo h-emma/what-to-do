@@ -58,7 +58,7 @@ img {
   display: none;
   top: 50px;
   right: 0;
-  /* background-color: lightblue; */
+  background-color: lightblue;
   height: 100vh;
   text-align: center;
 }
