@@ -8,8 +8,13 @@
     <?php if (isset($_SESSION['user'])) : ?>
         <p>Welcome, <?php echo $_SESSION['user']['username']; ?>!</p>
         <img src="<?php echo $_SESSION['user']['avatar_image']; ?>">
+
+        <!-- Loop out the task that have deadline today by using a fuction that get the information from the db -->
+        <?php
+        foreach (getTasksDeadlineToday($_SESSION['user']['id'], $database) as $deadlineTodayTasks) : ?>
+            <p><?php echo $deadlineTodayTasks['deadline']; ?></p>
+        <?php endforeach; ?>
     <?php endif; ?>
 </article>
 
-<!-- Loop out the task that have deadline today by using a fuction that get the information from the db -->
 <?php require __DIR__ . '/views/footer.php'; ?>
