@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-if (isset($_POST['title'])) {
-    $title = ($_POST['title']);
-    $description = ($_POST['description']);
-    $created = ($_POST['created']);
-    $deadline = ($_POST['deadline']);
+if (isset($_POST['task-title'])) {
+    $title = ($_POST['task-title']);
+    $description = ($_POST['task-description']);
+    $created = ($_POST['task-created']);
+    $deadline = ($_POST['task-deadline']);
     $id = $_SESSION['user']['id'];
 
     $statement = $database->prepare('INSERT INTO tasks (title, description, created, deadline, user_id) VALUES (:title, :description, :created, :deadline, :user_id)');
