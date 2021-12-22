@@ -15,7 +15,7 @@
             <button type="submit" class="add-list">Add list</button>
         </form>
     </div>
-    <!-- Update list with now title -->
+    <!-- Update list with new title -->
     <div class="list-form">
         <form action="app/list/update.php" method="post">
             <div class="add-list">
@@ -41,14 +41,6 @@
             <button type="submit">Delete list</button>
     </form>
 </div>
-<!-- Checkbox to click in if task is completed -->
-<div class="task-form">
-    <form action="app/task/completed.php" method="post">
-        <div class="add-task-completed">
-            <label for="completed"></label>
-            <input type="checkbox" name="completed[$id]" id="completed" value="1">
-    </form>
-</div>
 <!-- Form to create task -->
 <div class="task-form">
     <form action="app/task/create.php" method="post">
@@ -68,6 +60,14 @@
             <label for="task-deadline">Deadline</label>
             <input class="form-control" type="date" name="task-deadline" id="task-deadline" required>
         </div>
+        <!-- Checkbox to click in if task is completed -->
+        <div class="add-task">
+            <form action="app/task/completed.php" method="post">
+                <div class="add-task-completed">
+                    <label for="completed"></label>
+                    <input type="checkbox" name="completed" id="completed" value="0">
+            </form>
+        </div>
         <button type="submit" class="add-task">Add task to list</button>
     </form>
 </div>
@@ -79,5 +79,13 @@ foreach (getTasksInList($_SESSION['user']['id'], $database) as $task) : ?>
     <p><?php echo $task['created']; ?></p>
     <p><?php echo $task['deadline']; ?></p>
 <?php endforeach; ?>
+<!-- button to delete task -->
+<div class="list-form">
+    <form action="app/task/delete.php" method="post">
+        <div class="add-task">
+            <input type="hidden" name="delete-task" id="delete-task" value="<?= $task['id'] ?>">
+            <button type="submit">Delete task</button>
+    </form>
+</div>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
