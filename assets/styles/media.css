@@ -23,7 +23,7 @@
 
   .nav-link {
     font-size: 1rem;
-    color: #475569;
+    color: black;
   }
 
   .nav-link:hover {
@@ -32,5 +32,8 @@
 
   img {
     width: 100px;
+  }
+  body {
+    margin: 20px 0 20px 0;
   }
 }
