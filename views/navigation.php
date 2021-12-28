@@ -5,7 +5,7 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </div>
-    <ul class="navbarNav">
+    <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''; ?>" href="/index.php">Home</a>
         </li>
