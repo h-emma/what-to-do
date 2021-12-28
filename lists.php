@@ -29,7 +29,7 @@
     <?php if (isset($_SESSION['user'])) : ?>
         <?php
         foreach (getLists($_SESSION['user']['id'], $database) as $list) : ?>
-            <p><?php echo $list['title']; ?></p>
+            <p><?= $list['title']; ?></p>
         <?php endforeach; ?>
     <?php endif; ?>
 </article>
@@ -74,11 +74,11 @@
 <!-- Loop out tasks -->
 <?php
 foreach (getTasksInList($_SESSION['user']['id'], $database) as $task) : ?>
-    <p><?php echo $task['title']; ?></p>
-    <p><?php echo $task['description']; ?></p>
-    <p><?php echo $task['created']; ?></p>
-    <p><?php echo $task['deadline']; ?></p>
-    <p><?php echo $task['completed']; ?></p>
+    <p><?= $task['title']; ?></p>
+    <p><?= $task['description']; ?></p>
+    <p><?= $task['created']; ?></p>
+    <p><?= $task['deadline']; ?></p>
+    <p><?= $task['completed']; ?></p>
 <?php endforeach; ?>
 <!-- button to delete task -->
 <div class="list-form">
