@@ -1,0 +1,8 @@
+.button-main {
+  background-color: lightblue;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 2px;
+  padding: 8px 16px;
+}
