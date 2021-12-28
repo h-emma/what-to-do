@@ -8,16 +8,14 @@
         <div class="login-emial">
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" id="email" placeholder="email@mail.com" required>
-            <small class="form-text"></small>
         </div>
 
         <div class=login-password>
             <label for="password">Password</label>
             <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
-            <small class="form-text"></small>
         </div>
 
-        <button type="submit" class="button-login">Login</button>
+        <button type="submit" class="button-main">Login</button>
     </form>
 
     <p>Don't you have an account, <a href="create-account.php">create one!</a></p>
