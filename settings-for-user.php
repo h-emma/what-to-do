@@ -5,7 +5,7 @@
     <h1>Change your settings</h1>
     <!-- Update email -->
     <form action="app/users/update-settings-for-user.php" method="post">
-        <div class="update-emial">
+        <div class="update-email">
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" id="email" placeholder="email@mail.com" required>
         </div>
