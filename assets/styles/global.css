@@ -1,0 +1,18 @@
+:root {
+  /* Colors */
+  --background-color: #f8fbff;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  margin: 0 24px 0 24px;
+}
+
+img {
+  width: 80px;
+  border-radius: 50%;
+}
