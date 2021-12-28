@@ -6,13 +6,18 @@
     <p></p>
 
     <?php if (isset($_SESSION['user'])) : ?>
-        <p>Welcome, <?php echo $_SESSION['user']['username']; ?>!</p>
-        <img src="<?php echo $_SESSION['user']['avatar_image']; ?>">
+        <p>Welcome, <?= htmlspecialchars($_SESSION['user']['username']); ?>!</p>
+        <img src="<?= $_SESSION['user']['avatar_image']; ?>">
 
         <!-- Loop out the task that have deadline today by using a fuction that get the information from the db -->
         <?php
         foreach (getTasksDeadlineToday($_SESSION['user']['id'], $database) as $deadlineTodayTasks) : ?>
-            <p><?php echo $deadlineTodayTasks['deadline']; ?></p>
+            <p><?= $deadlineTodayTasks['title']; ?></p>
+            <p><?= $deadlineTodayTasks['description']; ?></p>
+            <p><?= $deadlineTodayTasks['created']; ?></p>
+            <p><?= $deadlineTodayTasks['deadline']; ?></p>
+            <p><?= $deadlineTodayTasks['completed']; ?></p>
+
         <?php endforeach; ?>
     <?php endif; ?>
 </article>
