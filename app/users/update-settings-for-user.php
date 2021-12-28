@@ -10,8 +10,8 @@ if (isset($_POST['email'])) {
 
     $statement = $database->prepare('UPDATE users SET email = :email WHERE id = :id');
 
-    $statement->bindParam(':id', $id);
-    $statement->bindParam(':email', $email);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->bindParam(':email', $email, PDO::PARAM_STR);
 
     $statement->execute();
 };
@@ -22,10 +22,11 @@ if (isset($_POST['password'])) {
 
     $statement = $database->prepare('UPDATE users SET password = :password WHERE id = :id');
 
-    $statement->bindParam(':password', $passwordHach);
-    $statement->bindParam(':id', $id);
+    $statement->bindParam(':password', $passwordHach, PDO::PARAM_STR);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
 
     $statement->execute();
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
 }
 
 redirect('/settings-for-user.php');
