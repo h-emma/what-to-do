@@ -3,23 +3,21 @@
 
 <article>
     <h1>Change your settings</h1>
-
+    <!-- Update email -->
     <form action="app/users/update-settings-for-user.php" method="post">
         <div class="update-emial">
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" id="email" placeholder="email@mail.com" required>
-            <!-- <small class="form-text"></small> -->
         </div>
-        <button type="submit" class="button-update-settings">Update</button>
+        <button type="submit" class="button-main">Update your email</button>
     </form>
-
+    <!-- Update password -->
     <form action="app/users/update-settings-for-user.php" method="post">
         <div class=update-password>
             <label for="password">Password</label>
             <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
-            <!-- <small class="form-text"></small> -->
         </div>
-        <button type="submit" class="button-update-settings">Update</button>
+        <button type="submit" class="button-main">Update your password</button>
     </form>
     <!--
     <form action="app/users/edit-settings-for-user.php" method="post" enctype="multipart/form-data">
