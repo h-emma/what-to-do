@@ -11,9 +11,8 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     //add avatar image for the users profile
     if (isset($_FILES['avatar'])) {
         $avatar = $_FILES['avatar'];
-
         $avatar['name'] = ['username'] . '-' . $avatar['name'];
-        $direction = __DIR__ . '/uploads/' . $avatar['name'];
+        $direction = __DIR__ . '/../../uploads/' . $avatar['name'];
 
 
         //add message if there something wrong with the uploading
@@ -25,16 +24,15 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
             move_uploaded_file($avatar['tmp_name'], $direction);
         };
     };
-    $avatarPath = '/uploads/' . $avatar['name'];
+    // $avatarPath = '/uploads/' . $avatar['name'];
 
     $statement = $database->prepare('INSERT INTO users (username, email, password, avatar_image) VALUES (:username, :email, :password, :avatar_image)');
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
     $statement->bindParam(':password', $passwordHach, PDO::PARAM_STR);
-    $statement->bindParam(':avatar_image', $avatarPath, PDO::PARAM_STR);
+    $statement->bindParam(':avatar_image',  $direction, PDO::PARAM_STR);
 
     $statement->execute();
-    $user = $statement->fetch(PDO::FETCH_ASSOC);
 };
 
 redirect('/');
