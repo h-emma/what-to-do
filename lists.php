@@ -29,7 +29,14 @@
     <?php if (isset($_SESSION['user'])) : ?>
         <?php
         foreach (getLists($_SESSION['user']['id'], $database) as $list) : ?>
-            <p><?= $list['title']; ?></p>
+            <form action="list.php" method="GET">
+                <div class="list">
+                    <input type="hidden" name="list-page" id="list-page" value="<?= $list['id'] ?>">
+                    <input type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
+                    <button type="submit" class="button-main"><?= $list['title'] ?></button>
+                </div>
+            </form>
+
         <?php endforeach; ?>
     <?php endif; ?>
 </article>
@@ -38,7 +45,8 @@
     <form action="app/list/delete.php" method="post">
         <div class="add-list">
             <input type="hidden" name="delete-list" id="delete-list" value="<?= $list['id'] ?>">
-            <button type="submit" class="button-delete">Delete list</button>
+            <button type="submit" class="button-main">Delete list</button>
+        </div>
     </form>
 </div>
 <!-- Form to create task -->
@@ -68,25 +76,42 @@
                     <input type="checkbox" name="completed" id="completed" value="1">
             </form>
         </div>
+        <div>
+            <label for="select-list">Choose a list:</label>
+
+            <select name="list" id="select-list">
+                <?php foreach (getLists($_SESSION['user']['id'], $database) as $list) : ?>
+                    <?php $listId = $list['id'] ?>
+                    <option value="<?= $listId ?>"><?= $list['title']; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
         <button type="submit" class="button-main">Add task to list</button>
     </form>
 </div>
 <!-- Loop out tasks -->
-<?php
-foreach (getTasksInList($_SESSION['user']['id'], $database) as $task) : ?>
+<!-- <?php
+        foreach (getTasksInList($_SESSION['user']['id'], $database) as $task) : ?>
     <p><?= $task['title']; ?></p>
     <p><?= $task['description']; ?></p>
     <p><?= $task['created']; ?></p>
     <p><?= $task['deadline']; ?></p>
     <p><?= $task['completed']; ?></p>
+    <div class="add-task">
+        <form action="app/task/completed.php" method="post">
+            <div class="add-task-completed">
+                <label for="completed"></label>
+                <input type="checkbox" name="completed" id="completed" value="1">
+        </form>
+    </div>
 <?php endforeach; ?>
-<!-- button to delete task -->
+button to delete task
 <div class="list-form">
     <form action="app/task/delete.php" method="post">
         <div class="add-task">
             <input type="hidden" name="delete-task" id="delete-task" value="<?= $task['id'] ?>">
-            <button type="submit" class="button-delete">Delete task</button>
+            <button type="submit" class="button-main">Delete task</button>
     </form>
-</div>
+</div> -->
 
 <?php require __DIR__ . '/views/footer.php'; ?>
