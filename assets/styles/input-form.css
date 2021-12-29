@@ -1,0 +1,37 @@
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: inline-block;
+}
+.update-email {
+  padding: 10px;
+}
+
+.update-password {
+  padding: 10px;
+}
+
+input {
+  height: 30px;
+  width: 200px;
+}
+
+.login-email {
+  display: flex;
+  flex-wrap: wrap;
+}
+.register-username {
+  padding: 10px 0;
+}
+.register-email {
+  padding: 10px 0;
+}
+.register-password {
+  padding: 10px 0;
+}
+.register-avatar {
+  padding: 10px 0;
+}
