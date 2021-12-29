@@ -17,9 +17,17 @@
             <p><?= $deadlineTodayTasks['created']; ?></p>
             <p><?= $deadlineTodayTasks['deadline']; ?></p>
             <p><?= $deadlineTodayTasks['completed']; ?></p>
+            <div class="add-task">
+                <form action="app/task/completed.php" method="post">
+                    <div class="add-task-completed">
+                        <label for="completed"></label>
+                        <input type="checkbox" name="completed" id="completed" value="1">
+                </form>
+            </div>
 
         <?php endforeach; ?>
     <?php endif; ?>
+    <!-- add button to save update task completed -->
 </article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
