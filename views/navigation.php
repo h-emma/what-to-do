@@ -11,15 +11,15 @@
         </li>
 
         <li class="nav-item">
-            <?php if (isset($_SESSION['user'])) : ?>
-                <a class="nav-link" href="lists.php">To-do lists</a>
+            <?php if (isUserLoggedIn()) : ?>
+                <a class="nav-link" href="lists.php">Create to-do lists</a>
             <?php else : ?>
-                <a class="nav-link <?= $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="login.php">Login</a>
+                <a class="nav-link <?= $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="login.php">Log in</a>
             <?php endif; ?>
         </li>
 
         <li class="nav-item">
-            <?php if (isset($_SESSION['user'])) : ?>
+            <?php if (isUserLoggedIn()) : ?>
                 <a class="nav-link" href="settings-for-user.php">Settings</a>
             <?php else : ?>
                 <a class="nav-link <?= $_SERVER['SCRIPT_NAME'] === '/create-account.php' ? 'active' : ''; ?>" href="/create-account.php">Create an account</a>
@@ -27,9 +27,8 @@
         </li>
 
         <li class="nav-item">
-            <!-- varför funkat det inte?! ($loggedIn()) -->
-            <?php if (isset($_SESSION['user'])) : ?>
-                <a class="nav-link" href="/app/users/logout.php">Logout</a>
+            <?php if (isUserLoggedIn()) : ?>
+                <a class="nav-link" href="/app/users/logout.php">Log out</a>
             <?php endif; ?>
     </ul>
 </nav>
