@@ -7,14 +7,13 @@
 
     <?php if (isset($_SESSION['user'])) : ?>
         <p>Welcome, <?= htmlspecialchars($_SESSION['user']['username']); ?>!</p>
-        <img src="<?= $_SESSION['user']['avatar_image']; ?>">
+        <img src="<?= $_SESSION['user']['avatar_image']; ?>" alt="Your profile image">
 
-        <!-- Loop out the task that have deadline today by using a fuction that get the information from the db -->
+        <!-- Loop out the task that have deadline today -->
         <?php
         foreach (getTasksDeadlineToday($_SESSION['user']['id'], $database) as $deadlineTodayTasks) : ?>
             <p><?= $deadlineTodayTasks['title']; ?></p>
             <p><?= $deadlineTodayTasks['description']; ?></p>
-            <p><?= $deadlineTodayTasks['created']; ?></p>
             <p><?= $deadlineTodayTasks['deadline']; ?></p>
             <p><?= $deadlineTodayTasks['completed']; ?></p>
             <div class="add-task">
