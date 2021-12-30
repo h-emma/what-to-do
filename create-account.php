@@ -22,13 +22,13 @@
 
         </div>
         <div class=register-avatar>
-            <label for="avatar">Upload an image</label>
-            <input class="form-control" type="file" name="avatar" id="avatar" accept=".png, .jpg, .jpeg" required>
+            <label for="avatar_image">Upload an image</label>
+            <input class="form-control" type="file" name="avatar_image" id="avatar_image" accept=".png, .jpg, .jpeg" required>
         </div>
         <button type="submit" class="button-main">Create an account</button>
     </form>
 
-    <p>Do you have an account, <a href="login.php">login!</a></p>
+    <p>Do you have an account, <a href="login.php">log in!</a></p>
 </article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
