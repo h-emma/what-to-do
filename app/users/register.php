@@ -6,14 +6,13 @@ require __DIR__ . '/../autoload.php';
 // register username, email and password for the user
 if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $username = trim($_POST['username']);
-    $email = trim($_POST['email']);
+    $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $passwordHach = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    //add avatar image for the users profile
-    if (isset($_FILES['avatar'])) {
-        $avatar = $_FILES['avatar'];
-        $avatar['name'] = ['username'] . '-' . $avatar['name'];
-        $direction = __DIR__ . '/../../uploads/' . $avatar['name'];
 
+    if (isset($_FILES['avatar_image'])) {
+        $avatarImage = $_FILES['avatar_image'];
+        $avatar['name'] = $avatarImage['name'];
+        $direction = __DIR__ . '/../../uploads/' . $avatarImage['name'];
 
         //add message if there something wrong with the uploading
         if ($avatar['type'] !== 'image/png') {
@@ -24,7 +23,6 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
             move_uploaded_file($avatar['tmp_name'], $direction);
         };
     };
-    // $avatarPath = '/uploads/' . $avatar['name'];
 
     $statement = $database->prepare('INSERT INTO users (username, email, password, avatar_image) VALUES (:username, :email, :password, :avatar_image)');
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
@@ -35,4 +33,4 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $statement->execute();
 };
 
-redirect('/');
+redirect('/login.php');
