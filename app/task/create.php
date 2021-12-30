@@ -29,4 +29,4 @@ if (isset($_POST['task-title'])) {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 };
 
-redirect('/lists.php');
+redirect('/list.php');
