@@ -13,4 +13,4 @@ $statement->bindParam(':id', $id, PDO::PARAM_INT);
 $statement->execute();
 
 
-redirect('/lists.php');
+redirect('/list.php');
