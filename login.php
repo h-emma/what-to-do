@@ -15,7 +15,7 @@
             <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
         </div>
 
-        <button type="submit" class="button-main">Login</button>
+        <button type="submit" class="button-main">Log in</button>
     </form>
 
     <p>Don't you have an account, <a href="create-account.php">create one!</a></p>
