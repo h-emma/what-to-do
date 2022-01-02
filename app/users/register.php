@@ -9,26 +9,27 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $passwordHach = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    if (isset($_FILES['avatar_image'])) {
-        $avatarImage = $_FILES['avatar_image'];
-        $avatar['name'] = $avatarImage['name'];
-        $direction = __DIR__ . '/../../uploads/' . $avatarImage['name'];
+    if (isset($_FILES['avatar'])) {
+        $avatar = $_FILES['avatar'];
 
-        //add message if there something wrong with the uploading
-        if ($avatar['type'] !== 'image/png') {
-            echo 'The image file needs to be an .jpg, .jpeg or .png, please choose an another format';
+        $avatar['name'] = date('Y-m-d') . $avatar['name'];
+        $direction = __DIR__ . '/uploads/' . $avatar['name'];
+
+        if ($avatar['type'] !== 'image/jpeg') {
+            echo 'The image file needs to be an .jpg, .jpeg please choose an another format';
         } elseif ($avatar['size'] >= 2097152) {
             echo 'The image are to big, max size is 2MB';
         } else {
             move_uploaded_file($avatar['tmp_name'], $direction);
         };
     };
+    $avatarPath = '/app/users/uploads/' . $avatar['name'];
 
     $statement = $database->prepare('INSERT INTO users (username, email, password, avatar_image) VALUES (:username, :email, :password, :avatar_image)');
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
     $statement->bindParam(':password', $passwordHach, PDO::PARAM_STR);
-    $statement->bindParam(':avatar_image',  $direction, PDO::PARAM_STR);
+    $statement->bindParam(':avatar_image', $avatarPath, PDO::PARAM_STR);
 
     $statement->execute();
 };
