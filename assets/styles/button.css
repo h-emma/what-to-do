@@ -6,3 +6,10 @@
   border-radius: 2px;
   padding: 8px 16px;
 }
+
+.button-completed {
+  background-color: white;
+  border-style: solid;
+  border-radius: 16px;
+  padding: 8px;
+}
