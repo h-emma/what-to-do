@@ -14,5 +14,6 @@ if (isset($_POST['completed'])) {
     $statement->bindParam(':completed', $completed, PDO::PARAM_STR);
 
     $statement->execute();
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
 };
 redirect('/lists.php');
