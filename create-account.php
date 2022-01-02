@@ -22,8 +22,8 @@
 
         </div>
         <div class=register-avatar>
-            <label for="avatar_image">Upload an image</label>
-            <input class="form-control" type="file" name="avatar_image" id="avatar_image" accept=".png, .jpg, .jpeg" required>
+            <label for="avatar">Upload an image</label>
+            <input class="form-control" type="file" name="avatar" id="avatar" accept=".jpg, .jpeg" required>
         </div>
         <button type="submit" class="button-main">Create an account</button>
     </form>
