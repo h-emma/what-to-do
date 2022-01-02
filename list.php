@@ -21,20 +21,23 @@
         <p><?= $task['title']; ?></p>
         <p><?= $task['description']; ?></p>
         <p><?= $task['deadline']; ?></p>
-        <p><?= $task['completed']; ?></p>
-        <div class="add-task">
+    <?php endforeach; ?>
+    <!-- button to add if task is completed -->
+    <div class="add-task">
+        <?php foreach (getTasks($_SESSION['user']['id'], $database) as $task) : ?>
             <form action="app/task/completed.php" method="post">
                 <div class="add-task-completed">
                     <label for="completed"></label>
-                    <input type="checkbox" name="completed" id="completed" value="1">
+                    <button type="submit" class="button-completed" name="completed" id="completed" value="1"></button>
             </form>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
     <!-- button to delete list -->
     <div class="list-form">
         <?php foreach (getTasks($_SESSION['user']['id'], $database) as $task) : ?>
             <form action="app/task/delete.php" method="post">
                 <div class="add-list">
+                    <label for="delete-list"></label>
                     <input type="hidden" name="delete-list" id="delete-list" value="<?= $task['id'] ?>">
                     <button type="submit" class="button-main">Delete <?= $task['title'] ?></button>
                 </div>
@@ -56,7 +59,7 @@
                     <input class="form-control" type="date" name="task-deadline" id="task-deadline" required>
                 </div>
                 <div>
-                    <label for="select-list">Choose a list to add the task to:</label>
+                    <label for="select-list">Choose a task to update:</label>
 
                     <select name="list" id="select-list">
                         <?php foreach (getTasks($_SESSION['user']['id'], $database) as $task) : ?>
