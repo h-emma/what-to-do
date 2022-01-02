@@ -3,7 +3,6 @@
 
 <article>
     <h1><?php echo $config['title']; ?></h1>
-    <p></p>
 
     <?php if (isset($_SESSION['user'])) : ?>
         <p>Welcome, <?= htmlspecialchars($_SESSION['user']['username']); ?>!</p>
