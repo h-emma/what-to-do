@@ -28,6 +28,7 @@
             <form action="app/task/completed.php" method="post">
                 <div class="add-task-completed">
                     <label for="completed"></label>
+                    <input type="hidden" name="completed" id="completed" value="<?= $task['id'] ?>">
                     <button type="submit" class="button-completed" name="completed" id="completed" value="1"></button>
             </form>
         <?php endforeach; ?>

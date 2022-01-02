@@ -16,4 +16,4 @@ if (isset($_POST['completed'])) {
     $statement->execute();
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 };
-redirect('/lists.php');
+redirect('/list.php');
