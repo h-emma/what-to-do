@@ -9,6 +9,8 @@ if (isset($_POST['task-title'])) {
     $description = ($_POST['task-description']);
     $deadline = ($_POST['task-deadline']);
     $id = $_SESSION['user']['id'];
+    $inList = ($_POST['list']);
+    $listName = ($_POST['list-name']);
 
     $statement = $database->prepare('UPDATE tasks SET title = :title, description = :description, deadline = :deadline  WHERE :id = :id');
 
@@ -19,6 +21,6 @@ if (isset($_POST['task-title'])) {
 
     $statement->execute();
     $user = $statement->fetch(PDO::FETCH_ASSOC);
-};
 
-redirect('/list.php');
+    redirect("/list.php?list-page=$inList&list-name=$listName");
+};
