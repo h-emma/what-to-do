@@ -1,6 +1,7 @@
-article {
+main {
   display: flex;
   flex-direction: column;
+  font-size: var(--h1);
 }
 
 form {
@@ -34,4 +35,32 @@ input {
 }
 .register-avatar {
   padding: 10px 0;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-style: solid;
+  padding: 8px;
+  margin: 8px;
+}
+
+.heading-deadline {
+  margin: 8px;
+}
+
+.task-title {
+  font-size: var(--h3);
+  margin: 8px;
+}
+
+.task-description {
+  font-size: var(--p);
+  color: #7d7a7a;
+  margin: 8px;
+}
+.task-deadline {
+  font-size: var(--p);
+  margin: 8px;
 }
