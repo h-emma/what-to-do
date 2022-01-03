@@ -20,7 +20,12 @@ if (isset($_POST['task-title'])) {
     $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
 
     $statement->execute();
-    $user = $statement->fetch(PDO::FETCH_ASSOC);
-};
 
-redirect('/list.php');
+    $statement = $database->prepare('SELECT * FROM lists WHERE id = :list');
+    $statement->bindParam(':list', $inList, PDO::PARAM_INT);
+
+    $statement->execute();
+    $list = $statement->fetch(PDO::FETCH_ASSOC);
+
+    redirect("/list.php?list-page=$inList&list-name=$list[title]");
+};
