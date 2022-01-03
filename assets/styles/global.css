@@ -1,6 +1,12 @@
 :root {
   /* Colors */
   --background-color: #f8fbff;
+
+  /* Font sizs*/
+  --h1: 1.5rem;
+  --h2: 1.25rem;
+  --h3: 1rem;
+  --p: 0.75rem;
 }
 * {
   box-sizing: border-box;
@@ -12,7 +18,16 @@ body {
   margin: 0 24px 0 24px;
 }
 
+.user-container {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--h2);
+  gap: 10px;
+  margin: 8px;
+}
+
 img {
   width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
