@@ -23,10 +23,20 @@ function getLists($id, $database)
     return $lists;
 };
 
+function getList($id, $listId, $database)
+{
+    $statement = $database->query('SELECT * FROM lists WHERE user_id = :user_id AND id = :id;');
+    $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
+    $statement->bindParam(':id', $listId, PDO::PARAM_INT);
+    $statement->execute();
+    $list = $statement->fetch(PDO::FETCH_ASSOC);
+    return $list;
+};
+
 // Function that get the tasks
 function getTasks($id, $database)
 {
-    $statement = $database->query('SELECT * FROM tasks WHERE user_id = :user_id AND list_id = :list_id;;');
+    $statement = $database->query('SELECT * FROM tasks WHERE user_id = :user_id AND list_id = :list_id;');
     $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
     $statement->bindParam(':list_id', $_GET['list-page'], PDO::PARAM_INT);
     $statement->execute();
