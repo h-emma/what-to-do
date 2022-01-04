@@ -6,3 +6,28 @@
   font-style: normal;
   font-weight: 400;
 }
+
+h1 {
+  font-size: var(--h1);
+}
+
+p {
+  font-size: var(--p);
+}
+
+.add-list h2 {
+  font-size: var(--h2);
+  margin: 0 0 16px 0;
+}
+
+label {
+  font-size: var(--p);
+}
+
+.user-container h2 {
+  font-size: var(--h2);
+}
+
+.update-email h2 {
+  font-size: var(--h2);
+}
