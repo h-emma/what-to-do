@@ -20,6 +20,6 @@ if (isset($_POST['delete-task'])) {
 
     $statement->execute();
     $list = $statement->fetch(PDO::FETCH_ASSOC);
-    die(var_dump($list));
+
     redirect("/list.php?list-page=$inList&list-name=$list[title]");
 };
