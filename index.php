@@ -22,21 +22,26 @@
                 <h4 class="task-title"><?= $deadlineTodayTasks['title']; ?></h4>
                 <p class="task-description"><?= $deadlineTodayTasks['description']; ?></p>
                 <p class="task-deadline">Deadline: <?= $deadlineTodayTasks['deadline']; ?></p>
-            </div>
-        <?php endforeach; ?>
-        <!-- button to delete list -->
-        <div class="list-form">
-            <?php foreach (getTasks($_SESSION['user']['id'], $database) as $task) : ?>
+                <p class="task-completed">Completed: <?= $deadlineTodayTasks['completed']; ?></p>
+                <!-- Button to delete task -->
                 <form action="app/task/delete.php" method="post">
                     <div class="add-list">
-                        <label for="delete-list"></label>
-                        <input type="hidden" name="delete-list" id="delete-list" value="<?= $task['id'] ?>">
-                        <button type="submit" class="button-main">Delete <?= $task['title'] ?></button>
+                        <label for="delete-task"></label>
+                        <input type="hidden" name="delete-task" id="delete-task" value="<?= $task['id'] ?>">
+                        <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
+                        <button type="submit" class="button-delete">DELETE</button>
                     </div>
                 </form>
-            <?php endforeach; ?>
-        </div>
-        </div>
+                <!-- Button to add completed task -->
+                <form action="app/task/completed.php" method="post">
+                    <div class="add-task-completed">
+                        <label for="completed"></label>
+                        <input type="hidden" name="completed" id="completed" value="<?= $task['id'] ?>">
+                        <button type="submit" class="button-completed" name="completed" id="completed" value="1"></button>
+                    </div>
+                </form>
+            </div>
+        <?php endforeach; ?>
     <?php endif; ?>
 
 </main>
