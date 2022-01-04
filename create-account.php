@@ -10,7 +10,7 @@
             <input class="form-control" type="text" name="username" id="username" placeholder="Username" required>
         </div>
 
-        <div class="register-emial">
+        <div class="register-email">
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" id="email" placeholder="email@mail.com" required>
 
