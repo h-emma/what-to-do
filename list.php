@@ -4,16 +4,17 @@
 
 <!-- Form to create task -->
 <div class="task-form">
+    <h2>Add task</h2>
     <form action="app/task/create.php" method="post">
-        <div class="add-task">
-            <label for="task-title">Task title</label>
+        <div class="add-task-title">
+            <label for="task-title">Title</label>
             <input class="form-control" type="text" name="task-title" id="task-title" placeholder="title" required>
         </div>
-        <div class="add-task">
-            <label for="task-description">Task description</label>
+        <div class="add-task-description">
+            <label for="task-description">Description</label>
             <input class="form-control" type="text" name="task-description" id="task-description" placeholder="description" required>
         </div>
-        <div class="add-task">
+        <div class="add-task-deadline">
             <label for="task-deadline">Deadline</label>
             <input class="form-control" type="date" name="task-deadline" id="task-deadline" required>
         </div>
@@ -34,56 +35,58 @@
 <?php if (isset($_SESSION['user'])) : ?>
     <?php foreach (getTasksInList($_SESSION['user']['id'], $database) as $task) : ?>
         <div class="task-container">
-            <p><?= $task['title']; ?></p>
-            <p><?= $task['description']; ?></p>
-            <p><?= $task['deadline']; ?></p>
-            <p><?= $task['completed']; ?></p>
+            <h4 class="task-title"><?= $task['title']; ?></h4>
+            <p class="task-description"><?= $task['description']; ?></p>
+            <p class="task-deadline">Deadline: <?= $task['deadline']; ?></p>
+            <p class="task-completed">Completed: <?= $task['completed']; ?></p>
             <!-- Button to delete task -->
             <form action="app/task/delete.php" method="post">
-                <div class="add-list">
+                <div class="add-action-task">
                     <label for="delete-task"></label>
                     <input type="hidden" name="delete-task" id="delete-task" value="<?= $task['id'] ?>">
                     <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
-                    <button type="submit" class="button-delete ">DELETE</button>
-                </div>
+                    <button type="submit" class="button-delete ">Delete</button>
             </form>
             <!-- Button to add completed task -->
             <form action="app/task/completed.php" method="post">
-                <div class="add-task-completed">
-                    <label for="completed"></label>
-                    <input type="hidden" name="completed" id="completed" value="<?= $task['id'] ?>">
-                    <button type="submit" class="button-completed" name="completed" id="completed" value="1"></button>
-                </div>
-            </form>
+                <label for="completed"></label>
+                <input type="hidden" name="completed" id="completed" value="<?= $task['id'] ?>">
+                <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
+                <button type="submit" class="button-completed">Complete</button>
+        </div>
+        </form>
         </div>
     <?php endforeach; ?>
     <!-- form to update task -->
     <div class="task-form">
+        <h2>Update task</h2>
         <form action="app/task/update.php" method="post">
-            <div class="add-task">
-                <label for="task-title">Task title</label>
+            <div class="add-task-title">
+                <label for="task-title">Title</label>
                 <input class="form-control" type="text" name="task-title" id="task-title" placeholder="title" required>
-                <div class="add-task">
-                    <label for="task-description">Task description</label>
-                    <input class="form-control" type="text" name="task-description" id="task-description" placeholder="description" required>
-                </div>
-                <div class="add-task">
-                    <label for="task-deadline">Deadline</label>
-                    <input class="form-control" type="date" name="task-deadline" id="task-deadline" required>
-                </div>
-                <div>
-                    <label for="select-task">Choose a task to update:</label>
+            </div>
+            <div class="add-task-description">
+                <label for="task-description">Description</label>
+                <input class="form-control" type="text" name="task-description" id="task-description" placeholder="description" required>
+            </div>
+            <div class="add-task-deadline">
+                <label for="task-deadline">Deadline</label>
+                <input class="form-control" type="date" name="task-deadline" id="task-deadline" required>
+            </div>
+            <div>
+                <label for="select-task">Choose a task to update:</label>
 
-                    <select name="task" id="select-task">
-                        <?php foreach (getTasks($_SESSION['user']['id'], $database) as $task) : ?>
-                            <option value="<?= $task['id'] ?>"><?= $task['title']; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                <button type="submit" class="button-main">Update task</button>
+                <select name="task" id="select-task">
+                    <?php foreach (getTasks($_SESSION['user']['id'], $database) as $task) : ?>
+                        <option value="<?= $task['id'] ?>"><?= $task['title']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <button type="submit" class="button-main">Update</button>
         </form>
     </div>
     <div class="list-form">
+        <h2>Update task</h2>
         <?php $list = getList($_SESSION['user']['id'], $_GET['list-page'], $database) ?>
         <form action="app/list/update.php" method="post">
             <div class="add-list">
@@ -91,7 +94,7 @@
                 <input type="hidden" name="list-id" id="list-id" value="<?= $list['id'] ?>">
                 <input class="form-control" type="text" name="title" id="title" placeholder="title" required>
             </div>
-            <button type="submit" class="button-main">Update title</button>
+            <button type="submit" class="button-main">Update</button>
         </form>
     <?php endif; ?>
     </div>
