@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 // Function that make rediraction path
 function redirect(string $path)
 {
@@ -22,7 +23,7 @@ function getLists($id, $database)
     $lists = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $lists;
 };
-
+// Function that get the list
 function getList($id, $listId, $database)
 {
     $statement = $database->query('SELECT * FROM lists WHERE user_id = :user_id AND id = :id;');
