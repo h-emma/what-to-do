@@ -1,0 +1,57 @@
+.task-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-style: solid;
+  padding: 8px;
+  margin: 8px;
+}
+
+.heading-deadline {
+  margin: 8px;
+}
+
+.task-title {
+  font-size: var(--h3);
+  margin: 8px;
+}
+
+.task-description {
+  font-size: var(--p);
+  color: #7d7a7a;
+  margin: 8px;
+}
+.task-deadline {
+  font-size: var(--p);
+  margin: 8px;
+}
+
+.task-completed {
+  font-size: var(--p);
+  margin: 8px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.add-task-title {
+  margin: 0 0 16px 0;
+}
+
+.add-task-description {
+  margin: 0 0 16px 0;
+}
+
+.add-task-deadline {
+  margin: 0 0 16px 0;
+}
+
+.add-action-task {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin: 8px;
+}
