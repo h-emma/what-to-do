@@ -64,3 +64,8 @@ input {
   font-size: var(--p);
   margin: 8px;
 }
+
+.task-completed {
+  font-size: var(--p);
+  margin: 8px;
+}
