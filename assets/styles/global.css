@@ -3,10 +3,10 @@
   --background-color: #f8fbff;
 
   /* Font sizs*/
-  --h1: 1.5rem;
-  --h2: 1.25rem;
+  --h1: 2rem;
+  --h2: 1.5rem;
   --h3: 1rem;
-  --p: 0.75rem;
+  --p: 1rem;
 }
 * {
   box-sizing: border-box;
@@ -18,6 +18,12 @@ body {
   margin: 0 24px 0 24px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for the user info on home page */
 .user-container {
   display: flex;
   flex-direction: row;
