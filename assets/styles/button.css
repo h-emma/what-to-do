@@ -8,8 +8,17 @@
 }
 
 .button-completed {
-  background-color: white;
-  border-style: solid;
+  background-color: #f4a3a3;
+  border: none;
+  font-size: 16px;
   border-radius: 16px;
-  padding: 8px;
+  padding: 8px 16px;
+}
+
+.button-delete {
+  background-color: #f4a3a3;
+  border: none;
+  font-size: var(--p);
+  border-radius: 16px;
+  padding: 8px 16px;
 }
