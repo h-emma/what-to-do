@@ -33,25 +33,29 @@
 <!-- Loop out task -->
 <?php if (isset($_SESSION['user'])) : ?>
     <?php foreach (getTasksInList($_SESSION['user']['id'], $database) as $task) : ?>
-        <p><?= $task['title']; ?></p>
-        <p><?= $task['description']; ?></p>
-        <p><?= $task['deadline']; ?></p>
-        <!-- Button to delete task -->
-        <form action="app/task/delete.php" method="post">
-            <div class="add-list">
-                <label for="delete-task"></label>
-                <input type="hidden" name="delete-task" id="delete-task" value="<?= $task['id'] ?>">
-                <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
-                <button type="submit" class="button-main">Delete <?= $task['title'] ?></button>
-            </div>
-        </form>
-        <!-- Button to add completed task -->
-        <form action="app/task/completed.php" method="post">
-            <div class="add-task-completed">
-                <label for="completed"></label>
-                <input type="hidden" name="completed" id="completed" value="<?= $task['id'] ?>">
-                <button type="submit" class="button-completed" name="completed" id="completed" value="1"></button>
-        </form>
+        <div class="task-container">
+            <p><?= $task['title']; ?></p>
+            <p><?= $task['description']; ?></p>
+            <p><?= $task['deadline']; ?></p>
+            <p><?= $task['completed']; ?></p>
+            <!-- Button to delete task -->
+            <form action="app/task/delete.php" method="post">
+                <div class="add-list">
+                    <label for="delete-task"></label>
+                    <input type="hidden" name="delete-task" id="delete-task" value="<?= $task['id'] ?>">
+                    <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
+                    <button type="submit" class="button-delete ">DELETE</button>
+                </div>
+            </form>
+            <!-- Button to add completed task -->
+            <form action="app/task/completed.php" method="post">
+                <div class="add-task-completed">
+                    <label for="completed"></label>
+                    <input type="hidden" name="completed" id="completed" value="<?= $task['id'] ?>">
+                    <button type="submit" class="button-completed" name="completed" id="completed" value="1"></button>
+                </div>
+            </form>
+        </div>
     <?php endforeach; ?>
     <!-- form to update task -->
     <div class="task-form">
