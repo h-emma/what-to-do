@@ -54,6 +54,15 @@ function getTasksInList($id, $database)
     $listTasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $listTasks;
 };
+// Function that get list where task is in
+function getListTaskIsIn($taskId, $database)
+{
+    $statement = $database->prepare('SELECT lists.id, lists.title FROM tasks INNER JOIN lists ON tasks.list_id = lists.id WHERE tasks.id = :task_id');
+    $statement->bindParam(':task_id', $taskId, PDO::PARAM_INT);
+    $statement->execute();
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
 // Function that get all tasks that have deadline today
 function getTasksDeadlineToday($id, $database)
 {
