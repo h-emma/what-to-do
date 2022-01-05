@@ -8,15 +8,17 @@ if (isset($_POST['task-title'])) {
     $title = trim(filter_var($_POST['task-title'], FILTER_SANITIZE_STRING));
     $description = ($_POST['task-description']);
     $deadline = ($_POST['task-deadline']);
+    $completed = ($_POST['task-completed']);
     $id = $_SESSION['user']['id'];
     $inList = ($_POST['list']);
     $listName = ($_POST['list-name']);
 
-    $statement = $database->prepare('UPDATE tasks SET title = :title, description = :description, deadline = :deadline  WHERE :id = :id');
+    $statement = $database->prepare('UPDATE tasks SET title = :title, description = :description, deadline = :deadline, completed = :completed  WHERE :id = :id');
 
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
     $statement->bindParam(':description', $description, PDO::PARAM_STR);
     $statement->bindParam(':deadline', $deadline, PDO::PARAM_STR);
+    $statement->bindParam(':completed', $completed, PDO::PARAM_STR);
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
 
     $statement->execute();
