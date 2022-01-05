@@ -1,10 +1,5 @@
 <nav class="nav-container">
     <a class="nav-loga" href="#"><?= $config['title']; ?></a>
-    <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link <?= $_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''; ?>" href="/index.php">Home</a>
@@ -31,4 +26,9 @@
                 <a class="nav-link" href="/app/users/logout.php">Log out</a>
             <?php endif; ?>
     </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 </nav>
