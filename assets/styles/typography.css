@@ -20,6 +20,14 @@ p {
   margin: 0 0 16px 0;
 }
 
+.task-form h2 {
+  font-size: var(--h2);
+  margin: 0 0 8px 0;
+}
+.list-form h2 {
+  font-size: var(--h2);
+  margin: 0 0 8px 0;
+}
 label {
   font-size: var(--p);
 }
