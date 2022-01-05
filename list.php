@@ -53,7 +53,8 @@
             <!-- Button to add completed task -->
             <form action="app/task/completed.php" method="post">
                 <label for="completed"></label>
-                <input type="hidden" name="completed" id="completed" value="<?= 'YES' ?>">
+                <input type="hidden" name="task-id" id="task-id" value="<?= $task['id'] ?>">
+                <input type="hidden" name="completed" id="completed" value="<?= $task['completed'] ?>">
                 <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
                 <button type="submit" class="button-completed">Complete</button>
         </div>
