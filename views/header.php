@@ -7,7 +7,6 @@
 
     <title><?= $config['title']; ?></title>
 
-    <link rel="stylesheet" href="/assets/styles/media.css">
     <link rel="stylesheet" href="/assets/styles/typography.css">
     <link rel="stylesheet" href="/assets/styles/navigation.css">
     <link rel="stylesheet" href="/assets/styles/global.css">
