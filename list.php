@@ -18,6 +18,9 @@
             <label for="task-deadline">Deadline</label>
             <input class="form-control" type="date" name="task-deadline" id="task-deadline" required>
         </div>
+        <div class="add-task-completed">
+            <input type="hidden" name="task-completed" id="task-completed" value="<?= 'NO' ?>">
+        </div>
         <div>
             <label for="select-list">Choose a list to add the task to: </label>
 
@@ -50,7 +53,7 @@
             <!-- Button to add completed task -->
             <form action="app/task/completed.php" method="post">
                 <label for="completed"></label>
-                <input type="hidden" name="completed" id="completed" value="<?= $task['id'] ?>">
+                <input type="hidden" name="completed" id="completed" value="<?= 'YES' ?>">
                 <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
                 <button type="submit" class="button-completed">Complete</button>
         </div>
@@ -73,6 +76,9 @@
                 <label for="task-deadline">Deadline</label>
                 <input class="form-control" type="date" name="task-deadline" id="task-deadline" required>
             </div>
+            <div class="add-task-completed">
+                <input type="hidden" name="task-completed" id="task-completed" value="<?= 'NO' ?>">
+            </div>
             <div>
                 <label for="select-task">Choose a task to update:</label>
 
@@ -86,7 +92,7 @@
         </form>
     </div>
     <div class="list-form">
-        <h2>Update task</h2>
+        <h2>Update list</h2>
         <?php $list = getList($_SESSION['user']['id'], $_GET['list-page'], $database) ?>
         <form action="app/list/update.php" method="post">
             <div class="add-list">
