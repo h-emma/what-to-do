@@ -2,11 +2,22 @@
 
 # What to do
 
-Text about the project and why it exists. This would also be a great place to link the project online.
+The goal with this project is to build a website where a user can create an account, login, add list and task and then delete and logout. 
+
+To visit the site click [here](https://emma-h.com/what-to-do/).
 
 # Installation
 
-Add the installation instructions.
+
+To install this project follow this list
+- Clone the project
+```
+git clone https://github.com/h-emma/what-to-do
+```
+- Start php server ```php -S localhost:8000```
+ 
+- Open up you browser and paste in this link:
+```http://localhost:8000/```
 
 # Code Review
 
