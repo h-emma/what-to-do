@@ -39,3 +39,7 @@ label {
 .update-email h2 {
   font-size: var(--h2);
 }
+
+.link {
+  text-decoration: underline;
+}
