@@ -19,7 +19,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     // If we couldn't find the user in the database, redirect back to the login
     // page with our custom redirect function.
     if (!$user) {
-        redirect('/login.php');
+        redirect('login.php');
     }
     $passmatch = password_verify($_POST['password'], $user['password']);
 
@@ -33,4 +33,4 @@ if (isset($_POST['email'], $_POST['password'])) {
     }
 }
 
-redirect('/');
+redirect('../../index.php');

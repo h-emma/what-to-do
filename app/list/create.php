@@ -17,4 +17,4 @@ if (isset($_POST['title'])) {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 };
 
-redirect('/lists.php');
+redirect('../../lists.php');

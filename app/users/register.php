@@ -23,7 +23,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
             move_uploaded_file($avatar['tmp_name'], $direction);
         };
     };
-    $avatarPath = '/app/users/uploads/' . $avatar['name'];
+    $avatarPath = 'app/users/uploads/' . $avatar['name'];
 
     $statement = $database->prepare('INSERT INTO users (username, email, password, avatar_image) VALUES (:username, :email, :password, :avatar_image)');
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
@@ -34,4 +34,4 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $statement->execute();
 };
 
-redirect('/login.php');
+redirect('../../login.php');

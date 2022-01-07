@@ -16,5 +16,5 @@ if (isset($_POST['title'])) {
     $statement->bindParam(':id', $listId, PDO::PARAM_INT);
 
     $statement->execute();
-    redirect("/list.php?list-page=$listId&list-name=$title");
+    redirect("../../list.php?list-page=$listId&list-name=$title");
 };
