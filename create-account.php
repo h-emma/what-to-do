@@ -28,7 +28,7 @@
         <button type="submit" class="button-main">Create an account</button>
     </form>
 
-    <p>Do you have an account, <a href="login.php">log in!</a></p>
+    <p>Do you have an account, <a class="link" href="login.php">login!</a></p>
 </article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
