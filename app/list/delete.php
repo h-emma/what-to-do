@@ -17,4 +17,4 @@ if (isset($_POST['delete-list'])) {
     $statement->bindParam(':list_id', $id, PDO::PARAM_INT);
     $statement->execute();
 };
-redirect('../../lists.php');
+redirect('lists.php');

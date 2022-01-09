@@ -29,5 +29,5 @@ if (isset($_POST['completed'])) {
     $statement->execute();
     $list = $statement->fetch(PDO::FETCH_ASSOC);
 
-    redirect("../../list.php?list-page=$inList&list-name=$list[title]");
+    redirect("list.php?list-page=$inList&list-name=$list[title]");
 };
