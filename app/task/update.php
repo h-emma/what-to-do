@@ -23,5 +23,5 @@ if (isset($_POST['task-title'])) {
 
     $list = getListTaskIsIn($taskId, $database);
 
-    redirect("list.php?list-page=$list[id]&list-name=$list[title]");
+    redirect("/list.php?list-page=$list[id]&list-name=$list[title]");
 };

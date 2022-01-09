@@ -28,4 +28,4 @@ if (isset($_POST['password'])) {
     $statement->execute();
 }
 
-redirect('settings.php');
+redirect('/settings.php');
