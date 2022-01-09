@@ -2,7 +2,7 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 
 <main>
-    <h1>To-do lists</h1>
+    <h1>All lists</h1>
 
     </div>
     <!-- add title to list -->
