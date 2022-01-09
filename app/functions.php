@@ -23,6 +23,7 @@ function getLists($id, $database)
     $lists = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $lists;
 };
+
 // Function that get the list
 function getList($id, $listId, $database)
 {
@@ -33,16 +34,14 @@ function getList($id, $listId, $database)
     $list = $statement->fetch(PDO::FETCH_ASSOC);
     return $list;
 };
-
-// Function that get the tasks
-function getTasks($id, $database)
+// Function that get all tasks
+function getAllTasks($id, $database)
 {
-    $statement = $database->query('SELECT * FROM tasks WHERE user_id = :user_id AND list_id = :list_id;');
+    $statement = $database->query('SELECT * FROM tasks WHERE user_id = :user_id;');
     $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
-    $statement->bindParam(':list_id', $_GET['list-page'], PDO::PARAM_INT);
     $statement->execute();
-    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-    return $tasks;
+    $allTasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $allTasks;
 };
 // Funciton that get tasks in the list
 function getTasksInList($id, $database)
