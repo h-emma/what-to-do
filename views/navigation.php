@@ -7,11 +7,16 @@
 
         <li class="nav-item">
             <?php if (isUserLoggedIn()) : ?>
-                <a class="nav-link" href="lists.php">To-do lists</a>
+                <a class="nav-link" href="lists.php">Lists</a>
             <?php else : ?>
                 <a class="nav-link <?= $_SERVER['SCRIPT_NAME'] === 'login.php' ? 'active' : ''; ?>" href="login.php">Login</a>
             <?php endif; ?>
         </li>
+
+        <li class="nav-item">
+            <?php if (isUserLoggedIn()) : ?>
+                <a class="nav-link" href="tasks.php">Tasks</a>
+            <?php endif; ?>
 
         <li class="nav-item">
             <?php if (isUserLoggedIn()) : ?>
