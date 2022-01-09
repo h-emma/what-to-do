@@ -84,7 +84,7 @@
                 <label for="select-task">Choose a task to update:</label>
 
                 <select name="task" id="select-task">
-                    <?php foreach (getTasks($_SESSION['user']['id'], $database) as $task) : ?>
+                    <?php foreach (getTasksInList($_SESSION['user']['id'], $database) as $task) : ?>
                         <option value="<?= $task['id'] ?>"><?= $task['title']; ?></option>
                     <?php endforeach; ?>
                 </select>
