@@ -15,7 +15,7 @@
     <!-- Update password -->
     <form action="app/users/update-settings.php" method="post">
         <div class=update-password>
-            <h2>Update you password</h2>
+            <h2>Update your password</h2>
             <label for="password">Password</label>
             <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
         </div>
