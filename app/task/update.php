@@ -5,12 +5,11 @@ declare(strict_types=1);
 require __DIR__ . '/../autoload.php';
 
 if (isset($_POST['task-title'])) {
-
     $taskId = $_POST['task'];
     $title = trim(filter_var($_POST['task-title'], FILTER_SANITIZE_STRING));
     $description = ($_POST['task-description']);
     $deadline = ($_POST['task-deadline']);
-    //$id = $_SESSION['user']['id'];
+
 
     $statement = $database->prepare('UPDATE tasks SET title = :title, description = :description, deadline = :deadline WHERE id = :task_id');
 
