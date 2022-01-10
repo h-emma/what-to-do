@@ -103,6 +103,6 @@
             </div>
             <button type="submit" class="button-main">Update</button>
         </form>
-    <?php endif; ?>
     </div>
-    <?php require __DIR__ . '/views/footer.php'; ?>
+<?php endif; ?>
+<?php require __DIR__ . '/views/footer.php'; ?>
