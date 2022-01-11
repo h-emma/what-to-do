@@ -26,7 +26,7 @@
                 <div class="list">
                     <input type="hidden" name="list-page" id="list-page" value="<?= $list['id'] ?>">
                     <input type="hidden" name="list-name" id="list-name" value="<?= $list['title'] ?>">
-                    <button type="submit" class="button-list"><?= $list['title'] ?></button>
+                    <button type="submit" class="button-list"><?= htmlspecialchars($list['title']); ?></button>
                 </div>
                 <!-- button to delete list -->
             </form>

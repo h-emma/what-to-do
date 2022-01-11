@@ -6,10 +6,10 @@
     <?php if (isset($_SESSION['user'])) : ?>
         <?php foreach (getAllTasks($_SESSION['user']['id'], $database) as $task) : ?>
             <div class="task-container">
-                <h4 class="task-title"><?= $task['title']; ?></h4>
-                <p class="task-description"><?= $task['description']; ?></p>
-                <p class="task-deadline">Deadline: <?= $task['deadline']; ?></p>
-                <p class="task-completed">Completed: <?= $task['completed']; ?></p>
+                <h4 class="task-title"><?= htmlspecialchars($task['title']); ?></h4>
+                <p class="task-description"><?= htmlspecialchars($task['description']); ?></p>
+                <p class="task-deadline">Deadline: <?= htmlspecialchars($task['deadline']); ?></p>
+                <p class="task-completed">Completed: <?= htmlspecialchars($task['completed']); ?></p>
             </div>
         <?php endforeach; ?>
     <?php endif; ?>

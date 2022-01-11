@@ -19,10 +19,10 @@
         <h3 class="heading-deadline">Deadline today: </h3>
         <?php foreach (getTasksDeadlineToday($_SESSION['user']['id'], $database) as $deadlineTodayTasks) : ?>
             <div class="task-container">
-                <h4 class="task-title"><?= $deadlineTodayTasks['title']; ?></h4>
-                <p class="task-description"><?= $deadlineTodayTasks['description']; ?></p>
-                <p class="task-deadline">Deadline: <?= $deadlineTodayTasks['deadline']; ?></p>
-                <p class="task-completed">Completed: <?= $deadlineTodayTasks['completed']; ?></p>
+                <h4 class="task-title"><?= htmlspecialchars($deadlineTodayTasks['title']); ?></h4>
+                <p class="task-description"><?= htmlspecialchars($deadlineTodayTasks['description']); ?></p>
+                <p class="task-deadline">Deadline: <?= htmlspecialchars($deadlineTodayTasks['deadline']); ?></p>
+                <p class="task-completed">Completed: <?= htmlspecialchars($deadlineTodayTasks['completed']); ?></p>
             </div>
         <?php endforeach; ?>
     <?php endif; ?>

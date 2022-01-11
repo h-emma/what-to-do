@@ -1,6 +1,6 @@
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
-<h1><?= $_GET['list-name']; ?></h1>
+<h1><?= htmlspecialchars($_GET['list-name']); ?></h1>
 
 <!-- Form to create task -->
 <div class="task-form">
@@ -26,7 +26,7 @@
 
             <select name="list" id="select-list">
                 <?php foreach (getLists($_SESSION['user']['id'], $database) as $list) : ?>
-                    <option value="<?= $list['id'] ?>"><?= $list['title']; ?></option>
+                    <option value="<?= $list['id'] ?>"><?= htmlspecialchars($list['title']); ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
@@ -38,10 +38,10 @@
 <?php if (isset($_SESSION['user'])) : ?>
     <?php foreach (getTasksInList($_SESSION['user']['id'], $database) as $task) : ?>
         <div class="task-container">
-            <h4 class="task-title"><?= $task['title']; ?></h4>
-            <p class="task-description"><?= $task['description']; ?></p>
-            <p class="task-deadline">Deadline: <?= $task['deadline']; ?></p>
-            <p class="task-completed">Completed: <?= $task['completed']; ?></p>
+            <h4 class="task-title"><?= htmlspecialchars($task['title']); ?></h4>
+            <p class="task-description"><?= htmlspecialchars($task['description']); ?></p>
+            <p class="task-deadline">Deadline: <?= htmlspecialchars($task['deadline']); ?></p>
+            <p class="task-completed">Completed: <?= htmlspecialchars($task['completed']); ?></p>
             <!-- Button to delete task -->
             <form action="app/task/delete.php" method="post">
                 <div class="add-action-task">
@@ -85,7 +85,7 @@
 
                 <select name="task" id="select-task">
                     <?php foreach (getTasksInList($_SESSION['user']['id'], $database) as $task) : ?>
-                        <option value="<?= $task['id'] ?>"><?= $task['title']; ?></option>
+                        <option value="<?= $task['id'] ?>"><?= htmlspecialchars($task['title']); ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
