@@ -74,3 +74,13 @@ function getTasksDeadlineToday(int $id, PDO $database): array
     });
     return $deadlineTodayTasks;
 }
+
+function checkCompleted($completed)
+{
+
+    if ($completed === 'YES') {
+        return $completed = 'NO';
+    } else {
+        return $completed = 'YES';
+    }
+}
