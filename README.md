@@ -4,8 +4,6 @@
 
 The goal with this project is to build a website where a user can create an account, login, add list and task and then delete and logout. 
 
-To visit the site click [here](https://emma-h.com/what-to-do/).
-
 # Installation
 
 
