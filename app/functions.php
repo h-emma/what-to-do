@@ -74,3 +74,8 @@ function getTasksDeadlineToday(int $id, PDO $database): array
     });
     return $deadlineTodayTasks;
 }
+//Function that simply recirects back to the page before.
+function back()
+{
+    redirect($_SERVER['HTTP_REFERER']);
+}

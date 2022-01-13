@@ -21,6 +21,13 @@
         </div>
         <button type="submit" class="button-main">Update</button>
     </form>
+    <form action="app/users/delete.php" method="post">
+        <div class=update-password>
+            <h2>Delete you profile</h2>
+        </div>
+        <input type="hidden" name="delete_user" id="delete_user" value="<?=$_SESSION['user']['id']?>">
+        <button type="submit" class="button-main button-danger">Delete</button>
+    </form>
 </main>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
