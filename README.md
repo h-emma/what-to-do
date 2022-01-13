@@ -19,18 +19,18 @@ git clone https://github.com/h-emma/what-to-do
 
 # Code Review
 
-Code review written by [Jane Doh](https://github.com/username).
+Code review written by [Simon Helier](https://github.com/Sakariash).
 
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-2. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-3. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-4. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-5. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-6. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-7. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-8. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-9. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-10. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
+1. `Register.php:general` - Make sure a secure password is needed when creating an account.
+2. `Register.php:general` - Check if the email is aldready registered before creating an account.
+3. `Create.php:general` - Able to set deadline date prior to todays date, for user experiance this should be fixed.
+4. `Create.php:9` - Always remember to validate input.
+5. `Update.php:10` - Always remember to validate input.
+6. `General` - Great file structure but multiple files is named the same, try giving them a little more explaning name e.g., delete-list / delete-task.
+7. `Create.php:8-12` - When declaring your variables with the `$_POST` values the extra parentheses around `$_POST['']` unnecessary.
+8. `Completed.php:8-11` - As above.
+9. `General` - For a better user experience try to interact a little more with the user. This can be done by sending a session message and let the user know what happened after they pushed a button.
+10. `General` - Have a click effect on all buttons to make it clear to the user something is happening.
 
 # Testers
 
