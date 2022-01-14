@@ -39,7 +39,7 @@
             <form action="app/list/completed.php" method="post">
                 <div class="add-list">
                     <input type="hidden" name="list_id" id="list_id" value="<?= $list['id'] ?>">
-                    <button type="submit" class="button-delete">Completed</button>
+                    <button type="submit" class="button-delete">Complete</button>
                 </div>
             </form>
         </div>

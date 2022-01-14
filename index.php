@@ -9,6 +9,13 @@
         <p>Create an account and log in to start create your to-do lists!</p>
     <?php endif; ?>
 
+    <?php if (isset($_SESSION['delete_completed'])) : ?>
+        <?php foreach ($_SESSION['delete_completed'] as $error) : ?>
+            <p class="success-alert"><?= $error; ?></p>
+        <?php endforeach; ?>
+        <?php unset($_SESSION['delete_completed'])?>
+    <?php endif; ?>
+
     <?php if (isset($_SESSION['user'])) : ?>
         <div class="user-container">
             <img src="<?= $_SESSION['user']['avatar_image']; ?>" alt="Your profile image">

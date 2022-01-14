@@ -43,3 +43,12 @@ label {
 .link {
   text-decoration: underline;
 }
+small {
+  margin-top: 10px;
+}
+.success-alert {
+  color: green;
+}
+.danger-alert {
+  color: red;
+}

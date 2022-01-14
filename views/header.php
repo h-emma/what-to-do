@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/assets/styles/input-form.css">
     <link rel="stylesheet" href="/assets/styles/task.css">
     <link rel="stylesheet" href="/assets/styles/list.css">
+    <link rel="stylesheet" href="/assets/styles/settings.css">
+
 </head>
 
 <body>
