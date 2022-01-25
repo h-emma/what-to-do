@@ -84,8 +84,18 @@ function getTasksDeadlineToday(int $id, PDO $database): array
     });
     return $deadlineTodayTasks;
 }
+
 //Function that simply recirects back to the page before.
 function back()
 {
     redirect($_SERVER['HTTP_REFERER']);
+}
+
+function checkCompleted($completed)
+{
+    if ($completed === 'YES') {
+        return $completed = 'NO';
+    } else {
+        return $completed = 'YES';
+    }
 }

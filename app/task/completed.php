@@ -12,11 +12,7 @@ if (isset($_POST['completed'])) {
 
     $statement = $database->prepare('UPDATE tasks SET completed = :completed WHERE id = :id');
 
-    if ($completed === 'YES') {
-        $completed = 'NO';
-    } else {
-        $completed = 'YES';
-    }
+    $completed = checkCompleted($completed);
 
     $statement->bindParam(':id', $taskId, PDO::PARAM_INT);
     $statement->bindParam(':completed', $completed, PDO::PARAM_STR);
