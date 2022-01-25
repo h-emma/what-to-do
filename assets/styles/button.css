@@ -33,9 +33,8 @@
   border-radius: 16px;
   padding: 12px 32px;
   font-weight: bold;
-
 }
-.button-danger{
-  background-color: rgb(212, 95, 95);
+.button-danger {
+  background-color: #f4a3a3;
   width: 100px;
 }

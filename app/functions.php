@@ -43,11 +43,12 @@ function getAllTasks(int $id, PDO $database): array
     $allTasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $allTasks;
 }
-function searchTasks(string $input, PDO $database)
+function searchTasks(string $input, int $id, PDO $database)
 {
     $word = "%$input%";
-    $statement = $database->prepare('SELECT * FROM tasks WHERE title LIKE :word');
+    $statement = $database->prepare('SELECT * FROM tasks WHERE user_id = :id AND title LIKE :word');
     $statement->bindParam(':word', $word, PDO::PARAM_STR);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
     $statement->execute();
     $searchTasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $searchTasks;

@@ -15,7 +15,7 @@
         </div>
 
         <?php if (isset($_GET['search'])) : ?>
-            <?php foreach (searchTasks($_GET['search'], $database) as $task) : ?>
+            <?php foreach (searchTasks($_GET['search'], $_SESSION['user']['id'], $database) as $task) : ?>
                 <div class="task-container">
                     <h4 class="task-title"><?= htmlspecialchars($task['title']); ?></h4>
                     <p class="task-description"><?= htmlspecialchars($task['description']); ?></p>
