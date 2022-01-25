@@ -17,6 +17,16 @@ git clone https://github.com/h-emma/what-to-do
 - Open up you browser and paste in this link:
 ```http://localhost:8000/```
 
+# Wunderlist+
+
+Features added by [Sofia Dersén](https://github.com/sdersen)
+
+1. As a user I'm able to search for tasks.
+2. As a user I'm able to delete my account along with all tasks and lists.
+3. As a user I'm able to mark all tasks in a list as completed with one click.
+
+[Link](https://github.com/h-emma/what-to-do/pull/5) to the pull request adding the new features.
+
 # Code Review
 
 Code review written by [Simon Helier](https://github.com/Sakariash).
