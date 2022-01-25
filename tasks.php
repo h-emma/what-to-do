@@ -4,7 +4,6 @@
 <main>
     <h1>All tasks</h1>
     <?php if (isset($_SESSION['user'])) : ?>
-
         <div class="search-container">
             <form action="" method="get">
                 <label for="search">Search</label>
