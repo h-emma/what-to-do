@@ -2,7 +2,7 @@
 
 # What to do
 
-The goal with this project is to build a website where a user can create an account, login, add list and task and then delete and logout. 
+The goal with this project is to build a website where a user can create an account, login, add list and task and then delete and logout.
 
 # Installation
 

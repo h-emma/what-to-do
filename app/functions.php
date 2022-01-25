@@ -43,6 +43,16 @@ function getAllTasks(int $id, PDO $database): array
     $allTasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $allTasks;
 }
+function searchTasks(string $input, int $id, PDO $database)
+{
+    $word = "%$input%";
+    $statement = $database->prepare('SELECT * FROM tasks WHERE user_id = :id AND title LIKE :word');
+    $statement->bindParam(':word', $word, PDO::PARAM_STR);
+    $statement->bindParam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $searchTasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $searchTasks;
+}
 // Funciton that get tasks in the list
 function getTasksInList(int $id, PDO $database): array
 {
@@ -75,9 +85,14 @@ function getTasksDeadlineToday(int $id, PDO $database): array
     return $deadlineTodayTasks;
 }
 
+//Function that simply recirects back to the page before.
+function back()
+{
+    redirect($_SERVER['HTTP_REFERER']);
+}
+
 function checkCompleted($completed)
 {
-
     if ($completed === 'YES') {
         return $completed = 'NO';
     } else {

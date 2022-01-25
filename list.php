@@ -59,8 +59,19 @@
                 <button type="submit" class="button-completed">Complete</button>
         </div>
         </form>
+
         </div>
     <?php endforeach; ?>
+    <!-- LIst DONE ------------------ -->
+    <h2>Entire list done</h2>
+    <small>Marks all the task in the list as completed.</small>
+    <form action="app/list/completed.php" method="post">
+        <div class="add-list">
+            <input type="hidden" name="list_id" id="list_id" value="<?= $_GET['list-page'] ?>">
+        </div>
+        <button type="submit" class="button-main">Update</button>
+    </form>
+
     <!-- form to update task -->
     <div class="task-form">
         <h2>Update task</h2>
@@ -95,6 +106,7 @@
     <div class="list-form">
         <h2>Update list</h2>
         <?php $list = getList($_SESSION['user']['id'], $_GET['list-page'], $database) ?>
+
         <form action="app/list/update.php" method="post">
             <div class="add-list">
                 <label for="title">Update title on the list</label>
@@ -102,6 +114,7 @@
                 <input class="form-control" type="text" name="title" id="title" placeholder="title" required>
             </div>
             <button type="submit" class="button-main">Update</button>
+
         </form>
     </div>
 <?php endif; ?>

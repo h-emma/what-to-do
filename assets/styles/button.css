@@ -22,6 +22,8 @@
   font-size: var(--p);
   border-radius: 16px;
   padding: 8px 16px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .button-list {
@@ -30,4 +32,9 @@
   font-size: var(--p);
   border-radius: 16px;
   padding: 12px 32px;
+  font-weight: bold;
+}
+.button-danger {
+  background-color: #f4a3a3;
+  width: 100px;
 }
